@@ -13,7 +13,7 @@ public class cntdigi {
 
 // **************USING LOGICS***********************
 
-int count =0;
+int  count =0;
 while(num>0){
     num/=10;//   ex: 123/10 = 12 ...12/10 = 1...  1/10 = 0 ..END
     count++;//        1              2            3

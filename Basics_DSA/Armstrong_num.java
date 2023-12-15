@@ -7,39 +7,37 @@ public class Armstrong_num {
     public static void main(String[] args) {
         System.out.println(isarmstrong(153));
     }
-static boolean isarmstrong(int num){
-        int temp=num,sum=0;
-        while(temp>0){
-            temp%=10;
-            sum+=power(temp,count(num));
-
-        }
-       if(sum==num){
-           return true;
-       }
-       return false;
-}
-
-    private static int power(int temp, int count) {
-        if(count==0){
-            return 1;
-        }
+    public static int pownum(int num, int pow){
         int cnt=1;
-        if(count==0){
+        if(pow==0){
             return 1;
         }
-        for (int i = 1; i <=count ; i++) {
-            cnt=temp*cnt;
+        for (int i = 1; i <=pow ; i++) {
+            cnt=num*cnt;
         }
         return cnt;
-    }
 
-    static int count(int num) {
-        while (num > 0) {
-            num /= 10;
-            cnt++;
+    }
+    public static int count(int num){
+        int  count =0;
+        while(num>0){
+            count++;//        1              2            3
+            num/=10;
         }
-   return cnt;
+        return count;
+    }
+    private static boolean isarmstrong(int i) {
+
+        int n=count(i);
+        int temp=i,sum=0;
+        while(temp>0){
+            int r =temp%10;
+            sum+=pownum(r,n);
+            temp/=10;
+
+        }
+        return (sum==i);
+
     }
 
 
